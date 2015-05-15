@@ -5,6 +5,8 @@ before_commands:
     - 'composer install --prefer-source --no-interaction --dev'
 checks:
     php:
+        code_rating: true
+        duplication: true
         use_self_instead_of_fqcn: true
         uppercase_constants: true
         return_doc_comments: true
