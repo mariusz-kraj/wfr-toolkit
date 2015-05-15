@@ -1,0 +1,11 @@
+---
+- name: Docker container
+  docker:
+    name: web
+    image: ubuntu:15.04
+    pull: always
+    state: reloaded
+    restart_policy: always
+    restart_policy_retry:  5
+    link:
+      - "db"
