@@ -1,0 +1,18 @@
+# This file is a "template" of what your parameters.yml file should look like
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     tracker
+    database_user:     root
+    database_password: root
+
+    mailer_transport:  smtp
+    mailer_host:       'localhost:1025'
+    mailer_user:       null
+    mailer_password:   null
+
+    locale:            pl
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:            ThisTokenIsNotSoSecretChangeIt

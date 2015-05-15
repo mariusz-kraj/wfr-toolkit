@@ -1,0 +1,7 @@
+{
+    "name": "series-tracker",
+    "version": "0.0.1",
+    "dependencies": {
+        "bootstrap": "https://github.com/twbs/bootstrap-sass/archive/v3.3.0.tar.gz"
+    }
+}
