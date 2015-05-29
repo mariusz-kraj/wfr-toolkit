@@ -1,8 +1,0 @@
----
-- name: Set up a development enviroment for Symfony2 with Docker
-  hosts: all
-  remote_user: root
-  sudo: true
-
-  roles:
-    - docker
