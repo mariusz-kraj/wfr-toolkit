@@ -9,7 +9,6 @@ var onError = function(err) {
 };
 
 gulp.task('Sass', function() {
-
     gulp.src(app + '/scss/**/*.scss')
         .pipe(plugins.plumber({
             errorHandler: onError
