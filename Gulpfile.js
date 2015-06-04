@@ -1,6 +1,8 @@
 var gulp = require('gulp'),
     gulpLoadPlugins = require('gulp-load-plugins'),
-    plugins = gulpLoadPlugins();
+    plugins = gulpLoadPlugins(),
+
+    less = require('gulp-less');
 
 var app = 'app/Resources';
 
@@ -8,28 +10,21 @@ var onError = function(err) {
     console.log(err);
 };
 
-gulp.task('Sass', function() {
-    gulp.src(app + '/scss/**/*.scss')
+gulp.task('less', function() {
+    gulp.src(app + '/less/**/*.less')
         .pipe(plugins.plumber({
             errorHandler: onError
         }))
-        .pipe(plugins.rubySass({
-            compass: true,
-            style: 'compressed',
-            check: true}))
+        .pipe(less())
         .pipe(plugins.minifyCss({keepSpecialComments:0}))
         .pipe(plugins.rename({suffix: '.min'}))
         .pipe(gulp.dest('web/css/'));
 });
 
-
-
 gulp.task('copy', function() {
     gulp.src(app + '/fonts/*.{ttf,woff,eof,svg,eot}')
         .pipe(gulp.dest('web/fonts/'));
 });
-
-
 
 gulp.task('concat', function() {
     gulp.src([
@@ -42,19 +37,23 @@ gulp.task('concat', function() {
         .pipe(gulp.dest('web/js/'));
 });
 
-
-
 gulp.task('watch', function() {
     gulp.watch(app + '/scss/**/*.scss', ['Sass']);
 });
 
 
-gulp.task('build', [
-'copy',
-'concat',
-'Sass,'
-]);
+gulp.task(
+    'build',
+    [
+        'copy',
+        'concat',
+        'less'
+    ]
+);
 
-gulp.task('default', [
-'Sass,'
-]);
+gulp.task(
+    'default',
+    [
+        'less'
+    ]
+);
