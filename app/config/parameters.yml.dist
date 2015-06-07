@@ -3,9 +3,9 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     tracker
-    database_user:     root
-    database_password: root
+    database_name:     app_db
+    database_user:     app_db_user
+    database_password: 123456
 
     mailer_transport:  smtp
     mailer_host:       'localhost:1025'
