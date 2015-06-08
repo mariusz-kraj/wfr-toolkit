@@ -1,28 +1,28 @@
 {
-  "name": "Series Tracker",
-  "version": "0.1.0",
-  "homepage": "https://github.com/mariusz-kraj/series-tracker",
-  "description": "App for tracking new episodes of users favorite series.",
-  "main": "web/app.php",
-  "keywords": [
-    "episode",
-    "series"
-  ],
-  "authors": [
-    "Vail"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "app/Resources/libs",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "~3.3.4",
-    "bootstrap-material-design": "0.3.0",
-    "components-font-awesome": "4.3.0"
-  }
+    "name": "Series Tracker",
+    "version": "0.1.0",
+    "homepage": "https://github.com/mariusz-kraj/series-tracker",
+    "description": "App for tracking new episodes of users favorite series.",
+    "main": "web/app.php",
+    "keywords": [
+        "episode",
+        "series"
+    ],
+    "authors": [
+        "Vail"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "app/Resources/libs",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "~3.3.4",
+        "bootstrap-material-design": "0.3.0",
+        "components-font-awesome": "4.3.0"
+    }
 }

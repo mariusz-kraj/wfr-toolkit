@@ -52,6 +52,7 @@ web/css
 web/js
 web/fonts
 app/dist
+npm-debug.log
 
 # bower
 app/Resources/libs

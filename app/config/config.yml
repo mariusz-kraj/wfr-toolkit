@@ -64,3 +64,7 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: AppBundle\Entity\User
+
+easy_admin:
+    entities:
+        - AppBundle\Entity\User

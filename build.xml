@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<project name="Series Tracker" default="build" basedir="." description="This is an build file for SeriesTracker.">
+    <target name="prepare">
+        <mkdir dir="app/cache"/>
+        <mkdir dir="app/logs"/>
+    </target>
+
+    <target name="build" depends="prepare">
+        <composer composer="/usr/local/bin/composer" command="install"/>
+
+        <exec command="php app/console doctrine:schema:update --force"/>
+
+        <exec command="sudo npm install" passthru="true"/>
+        <exec command="bower install --quiet" passthru="true"/>
+        <exec command="gulp build" passthru="true"/>
+    </target>
+
+    <target name="clean">
+        <exec command="php app/console cache:clear"/>
+    </target>
+
+    <target name="test">
+        <phpunit haltonerror="true" haltonfailure="true">
+            <batchtest>
+                <fileset dir="src">
+                    <include name="*Test.php"/>
+                </fileset>
+            </batchtest>
+        </phpunit>
+    </target>
+</project>
