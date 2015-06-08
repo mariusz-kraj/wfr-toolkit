@@ -18,7 +18,7 @@ script: phpunit -c app/ --coverage-text --coverage-clover=coverage.clover
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+  - php ocular.phar code-coverage:upload --access-token="d9658881ee141ded3c71ef442789c9fb034510d48c1e49eec9d54bd927613542" --format=php-clover coverage.clover
 
 # allow_failures: Allow this build to fail under the specified environments.
 # fast_finish: If your build fails do not continue trying to build, just stop.
