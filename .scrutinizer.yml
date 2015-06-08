@@ -1,6 +1,6 @@
 filter:
-    paths: [lib/*]
-    excluded_paths: [vendor/*, tests/*, ansible/*]
+    paths: [src/*]
+    excluded_paths: [app/cache/*, vendor/*, vagrant-ansible/*]
 before_commands:
     - 'composer install --prefer-source --no-interaction'
 checks:
