@@ -14,4 +14,12 @@ class DefaultController extends Controller
     {
         return $this->render('default/index.html.twig');
     }
+
+    /**
+     * @Route("/series", name="series")
+     */
+    public function seriesAction()
+    {
+        return $this->render('default/index.html.twig');
+    }
 }
