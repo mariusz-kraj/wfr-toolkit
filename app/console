@@ -19,7 +19,8 @@ $env = $input->getParameterOption(array('--env', '-e'), getenv('SYMFONY_ENV') ?:
 $debug = getenv('SYMFONY_DEBUG') !== '0' && !$input->hasParameterOption(array('--no-debug', '')) && $env !== 'prod';
 
 if ($debug) {
-    Debug::enable();
+    //until fos-user update
+    Debug::enable(E_RECOVERABLE_ERROR & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED, false);
 }
 
 $kernel = new AppKernel($env, $debug);
