@@ -69,9 +69,3 @@ fos_user:
 easy_admin:
     entities:
         - AppBundle\Entity\User
-
-knp_menu:
-    twig:
-        template: knp_menu.html.twig
-    templating: false
-    default_renderer: twig

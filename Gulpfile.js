@@ -11,12 +11,16 @@ var onError = function(err) {
 };
 
 gulp.task('less', function() {
-    gulp.src(app + '/less/**/*.less')
+    gulp.src([
+        app + '/less/main.less'
+    ])
         .pipe(plugins.plumber({
             errorHandler: onError
         }))
         .pipe(less())
+        .pipe(plugins.concat('app.css'))
         .pipe(plugins.minifyCss({keepSpecialComments:0}))
+        .pipe(gulp.dest('web/css/'))
         .pipe(plugins.rename({suffix: '.min'}))
         .pipe(gulp.dest('web/css/'));
 });
@@ -36,7 +40,7 @@ gulp.task('copy', function() {
         app + '/libs/bootstrap-material-design/dist/css/roboto.css',
         app + '/libs/components-font-awesome/css/font-awesome.css'
     ])
-        .pipe(plugins.concat('app.css'))
+        .pipe(plugins.concat('vendor.css'))
         .pipe(gulp.dest('web/css/'))
         .pipe(plugins.minifyCss({keepSpecialComments:0}))
         .pipe(plugins.rename({suffix: '.min'}))
@@ -57,9 +61,12 @@ gulp.task('concat', function() {
         .pipe(gulp.dest('web/js/'));
 });
 
-gulp.task('watch', function() {
-    gulp.watch(app + '/less/**/*.less', ['less']);
-});
+gulp.task(
+    'watch',
+    function() {
+        gulp.watch(app + '/less/**/*.less', ['less']);
+    }
+);
 
 
 gulp.task(
