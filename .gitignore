@@ -55,5 +55,5 @@ app/dist
 npm-debug.log
 
 # bower
-app/Resources/libs
+app/Resources/libs/*
 !app/Resources/libs/.gitkeep
