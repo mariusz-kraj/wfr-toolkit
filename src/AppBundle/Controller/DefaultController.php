@@ -3,12 +3,14 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage", methods={'GET'})
+     * @Route("/", name="homepage")
+     * @Method({"GET"})
      */
     public function indexAction()
     {
@@ -16,7 +18,8 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/series", name="series", methods={'GET'})
+     * @Route("/series", name="series")
+     * @Method({"GET"})
      */
     public function seriesAction()
     {
