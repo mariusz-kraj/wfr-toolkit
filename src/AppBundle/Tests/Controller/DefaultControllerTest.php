@@ -13,6 +13,15 @@ class DefaultControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertTrue($crawler->filter('html:contains("Homepage")')->count() > 0);
+        $this->assertGreatherThan(1, $crawler->filter('html:contains("Homepage")')->count());
+    }
+
+    public function seriesIndex()
+    {
+        $client = static::createClient();
+
+        $client->request('GET', '/series');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 }
