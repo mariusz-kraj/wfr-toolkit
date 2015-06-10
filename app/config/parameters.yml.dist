@@ -15,4 +15,4 @@ parameters:
     locale:            pl
 
     # A secret key that's used to generate certain security-related tokens
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    secret:            24m3vtcqwy9cptuq09v3yw3984cyax0cnuvyw983v4y

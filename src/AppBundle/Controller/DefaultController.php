@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="homepage", methods={'GET'})
      */
     public function indexAction()
     {
@@ -16,7 +16,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/series", name="series")
+     * @Route("/series", name="series", methods={'GET'})
      */
     public function seriesAction()
     {
