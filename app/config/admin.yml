@@ -1,0 +1,28 @@
+easy_admin:
+    formats:
+        date:     'd.m.Y'
+        time:     'H:i'
+        datetime: 'd.m.Y H:i:s'
+    entities:
+        User:
+            label: 'Users'
+            class: AppBundle\Entity\User
+            list:
+                title: "Users list"
+                fields:
+                    - id
+                    - { property: 'avatar', type: 'image', base_path: '/uploads/users' }
+                    - username
+                    - email
+                    - lastLogin
+                    - enabled
+                    - locked
+                actions: ['-show']
+            form:
+                fields:
+                    - { property: 'username' }
+                    - { property: 'email', type: 'email' }
+                    - { property: 'plainPassword', type: 'password', label: 'Password', help: 'Password must have at least 8 characters' }
+                    - { property: 'enabled', type: 'checkbox' }
+                    - { property: 'locked', type: 'checkbox' }
+                    - { property: 'avatarFile', type: 'file', label: 'Upload avatar', help: 'Select file to upload / change avatar' }

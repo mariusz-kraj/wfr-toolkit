@@ -1,0 +1,12 @@
+{% extends 'EasyAdminBundle:default:layout.html.twig' %}
+
+{% block header_footer %}
+    {% if app.user %}
+        <div id="header-security">
+            <p>
+                <small><i class="fa fa-lock"></i> <span>{{ 'header.logged_in_as'|trans }}</span></small>
+                {{ app.user.username|default('Unnamed User') }} | <a href="{{ path('fos_user_security_logout') }}" title="logout">logout</a>
+            </p>
+        </div>
+    {% endif %}
+{% endblock header_footer %}
