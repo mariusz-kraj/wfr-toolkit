@@ -4,9 +4,9 @@ namespace AppBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class DefaultControllerTest extends WebTestCase
+class PlayerControllerTest extends WebTestCase
 {
-    public function testIndex()
+    public function testCard()
     {
         $client = static::createClient();
 
@@ -14,14 +14,5 @@ class DefaultControllerTest extends WebTestCase
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertGreaterThanOrEqual(1, $crawler->filter('html:contains("Homepage")')->count());
-    }
-
-    public function seriesIndex()
-    {
-        $client = static::createClient();
-
-        $client->request('GET', '/series');
-
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 }
