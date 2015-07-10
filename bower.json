@@ -21,8 +21,12 @@
         "tests"
     ],
     "dependencies": {
-        "bootstrap": "~3.3.4",
-        "bootstrap-material-design": "0.3.0",
-        "components-font-awesome": "4.3.0"
+        "jquery": "~2.1.3",
+        "backbone": "~1.2",
+        "bootstrap": "~3.3.2",
+        "bootswatch": "~3.3.5",
+        "bootstrap-datepicker": "~1.4.0",
+        "bootstrap-select": "~1.7.3",
+        "font-awesome": "~4.3.0"
     }
 }
