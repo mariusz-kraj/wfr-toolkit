@@ -52,3 +52,6 @@ npm-debug.log
 # bower
 app/Resources/libs/*
 !app/Resources/libs/.gitkeep
+
+#PHPStorm
+.idea
